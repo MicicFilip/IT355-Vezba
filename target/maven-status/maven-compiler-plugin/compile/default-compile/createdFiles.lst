@@ -1,0 +1,5 @@
+com\proba\dao\impl\CategoryDaoImpl.class
+com\proba\entity\Category.class
+com\proba\controller\CategoryController.class
+com\proba\dao\CategoryDao.class
+com\proba\controller\MainController.class

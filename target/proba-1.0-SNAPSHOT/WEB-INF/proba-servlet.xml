@@ -1,0 +1,53 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+                    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd     
+                    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+    
+    <context:component-scan base-package="com.proba" />
+    
+    
+   
+    
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+        <property name="prefix" value="/WEB-INF/jsp/" /> 
+        <property name="suffix" value=".jsp" /> 
+    </bean>
+    
+    <mvc:annotation-driven />
+    <mvc:default-servlet-handler />
+    
+    <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/" />
+    <!--Kako bi Hibernate mogao da se poveže na bazu podataka potrebno je kreirati sesiju. To radimo u sledećem
+    zrnu-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="configLocation" >
+            <!--Dodavanje path-a na kome se nalaze podešavanja za Hibernate -->
+            <value>classpath:hibernate.cfg.xml</value>
+        </property>
+        <!-- Dodavanje path-a paketa u kome se nalaze entity fajlovi na osnovu kojih
+        će Hibernate kreirati bazu i upisivati u nju-->
+        <property name="packagesToScan">
+            <list>
+                <value>com.proba.entity</value>
+            </list>
+        </property>
+    </bean>
+    
+    <!--Transakcija se dešava između baze i programa korišćenjem Transaction Managera koji definišemo ovde
+    On koristi sesiju koju smo definisali iznad    -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+     
+    <bean id="transactionManager"  class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="categoryDao" class="com.proba.dao.impl.CategoryDaoImpl"></bean>
+    
+    <bean id="persistenceExceptionTranslationPostProcessor"
+          class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+</beans>
