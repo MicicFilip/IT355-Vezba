@@ -50,11 +50,14 @@
                             <c:url var="index"  value="/" />
                             <c:url var="addCategory"  value="/addCategory" />
                             <c:url var="addInstrument"  value="/addInstrument" />
+                            <c:url var="addStore"  value="/addStore" />
+                            <c:url var="addInventory"  value="/addInventory" />
                             
                             <li class="<%=  (pageName.equals("index.jsp")) ? "active" : ""%>"><a href="${index}">Index</a></li>
                             <li class="<%=  (pageName.equals("addCategory.jsp")) ? "active" : ""%>"><a href="${addCategory}">Add Category</a></li>
                             <li class="<%=  (pageName.equals("addInstrument.jsp")) ? "active" : ""%>"><a href="${addInstrument}">Add Instrument</a></li>
-                            
+                            <li class="<%=  (pageName.equals("addStore.jsp")) ? "active" : ""%>"><a href="${addStore}">Add Store</a></li>
+                            <li class="<%=  (pageName.equals("addInstrument.jsp")) ? "active" : ""%>"><a href="${addInventory}">Add Inventory</a></li>
                        
                         </ul>
                     </div>

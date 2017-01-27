@@ -34,6 +34,7 @@
                 <form:select id="slcRole" class="form-control" path="categoryId">
                       <form:option value="">SELECT</form:option>
                     <form:options items="${categories}" itemValue="id" itemLabel="categoryName" />
+                    
                 </form:select>
             </div>
             <form:input type="hidden" id="id" class="form-control" placeholder="id" path="id" />
