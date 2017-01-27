@@ -1,5 +1,11 @@
+C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\dao\impl\InstrumentDaoImpl.java
 C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\dao\impl\CategoryDaoImpl.java
+C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\controller\InstrumentController.java
 C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\controller\MainController.java
 C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\entity\Category.java
 C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\controller\CategoryController.java
+C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\converter\IntegerToCategory.java
+C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\converter\IntegerToInstrument.java
 C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\dao\CategoryDao.java
+C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\dao\InstrumentDao.java
+C:\Users\Filip\Documents\NetBeansProjects\proba\src\main\java\com\proba\entity\Instrument.java

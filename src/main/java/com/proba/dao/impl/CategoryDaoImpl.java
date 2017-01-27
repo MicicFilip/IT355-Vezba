@@ -61,8 +61,8 @@ public class CategoryDaoImpl implements CategoryDao {
     @SuppressWarnings("unchecked")
     @Transactional
     @Override
-    public Category getCategoryById(Integer categoryId) {
-        return (Category) getSession().createCriteria(Category.class).add(Restrictions.eq("categoryId", categoryId)).uniqueResult();
+    public Category getCategoryById(Integer id) {
+        return (Category) getSession().createCriteria(Category.class).add(Restrictions.eq("id", id)).uniqueResult();
     }
 
     @SuppressWarnings("unchecked")

@@ -18,7 +18,7 @@ public interface CategoryDao {
     
     public Category addCategory(Category category);
     
-    public Category getCategoryById(Integer categoryId);
+    public Category getCategoryById(Integer id);
     
     public boolean deleteCategory(Category category);
 }

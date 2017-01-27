@@ -10,7 +10,7 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 
 <%@include file="partials/header.jsp" %>
-<h1>Dodaj vrstu zivotinje</h1>
+<h1>Add Category</h1>
 <div class="container">
     <div class="col-md-6 col-md-offset-3">
         <c:url var="addCategory" value="/addCategory" ></c:url>
@@ -24,7 +24,7 @@
                 <form:input type="categoryName" class="form-control" id="categoryName" placeholder="Enter category name here" path="categoryName" />
             </div>
 
-            <form:input type="hidden" id="categoryId" class="form-control" placeholder="categoryId" path="categoryId" />
+            <form:input type="hidden" id="id" class="form-control" placeholder="id" path="id" />
             <button type="submit" class="btn btn-primary">Add</button>
         </form:form>
     </div>
@@ -44,8 +44,8 @@
 
                         <tr>
                             <td>${cats.categoryName}</td>
-                            <td><a href="<c:url value='/editCategory/${cats.categoryId}' />">edit</a></td>
-                            <td><a href="<c:url value='/deleteCategory/${cats.categoryId}' />">delete</a></td>
+                            <td><a href="<c:url value='/editCategory/${cats.id}' />">edit</a></td>
+                            <td><a href="<c:url value='/deleteCategory/${cats.id}' />">delete</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

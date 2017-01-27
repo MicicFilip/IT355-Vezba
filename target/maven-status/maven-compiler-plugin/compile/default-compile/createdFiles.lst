@@ -1,5 +1,11 @@
+com\proba\converter\IntegerToInstrument.class
+com\proba\entity\Instrument.class
 com\proba\dao\impl\CategoryDaoImpl.class
-com\proba\entity\Category.class
 com\proba\controller\CategoryController.class
-com\proba\dao\CategoryDao.class
+com\proba\controller\InstrumentController.class
 com\proba\controller\MainController.class
+com\proba\converter\IntegerToCategory.class
+com\proba\dao\impl\InstrumentDaoImpl.class
+com\proba\dao\InstrumentDao.class
+com\proba\entity\Category.class
+com\proba\dao\CategoryDao.class

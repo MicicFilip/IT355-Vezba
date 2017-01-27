@@ -46,8 +46,8 @@ public class CategoryController {
         return model;
     }
 
-    @RequestMapping(value = "/editCategory/{categoryId}", method = RequestMethod.GET)
-    public String editCategory(@PathVariable("categoryId") int categoryId, Model model) {
+    @RequestMapping(value = "/editCategory/{id}", method = RequestMethod.GET)
+    public String editCategory(@PathVariable("id") int categoryId, Model model) {
         Category category = categoryDao.getCategoryById(categoryId);
         model.addAttribute("category", category);
         List categories = categoryDao.getListCategory();
@@ -56,8 +56,8 @@ public class CategoryController {
 
     }
 
-    @RequestMapping(value = "/deleteCategory/{categoryId}", method = RequestMethod.GET)
-    public String deleteCategory(@PathVariable("categoryId") int categoryId, HttpServletRequest request) {
+    @RequestMapping(value = "/deleteCategory/{id}", method = RequestMethod.GET)
+    public String deleteCategory(@PathVariable("id") int categoryId, HttpServletRequest request) {
         Category category = categoryDao.getCategoryById(categoryId);
         if (category == null) {
             String referer = request.getHeader("Referer");

@@ -49,9 +49,11 @@
                         <ul class="nav navbar-nav">
                             <c:url var="index"  value="/" />
                             <c:url var="addCategory"  value="/addCategory" />
+                            <c:url var="addInstrument"  value="/addInstrument" />
                             
                             <li class="<%=  (pageName.equals("index.jsp")) ? "active" : ""%>"><a href="${index}">Index</a></li>
                             <li class="<%=  (pageName.equals("addCategory.jsp")) ? "active" : ""%>"><a href="${addCategory}">Add Category</a></li>
+                            <li class="<%=  (pageName.equals("addInstrument.jsp")) ? "active" : ""%>"><a href="${addInstrument}">Add Instrument</a></li>
                             
                        
                         </ul>
