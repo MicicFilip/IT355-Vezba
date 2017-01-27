@@ -17,17 +17,15 @@ import javax.persistence.*;
 public class Instrument implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "instrumentId")
-    private Integer instrumentId;
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
 
-    @Column(name = "instrumentName", length = 50, nullable = false)
-    private String instrumentName;
-
-    @Column(name = "instrumentPrice", nullable = false)
-    private double instrumentPrice;
+    @Column(name = "name", length = 50)
+    private String name;
 
     @JoinColumn(name = "categoryId", referencedColumnName = "id")
     @ManyToOne(optional = false)
@@ -36,32 +34,20 @@ public class Instrument implements Serializable {
     public Instrument() {
     }
 
-    public Instrument(Integer instrumentId) {
-        this.instrumentId = instrumentId;
+    public Integer getId() {
+        return id;
     }
 
-    public Integer getInstrumentId() {
-        return instrumentId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setInstrumentId(Integer instrumentId) {
-        this.instrumentId = instrumentId;
+    public String getName() {
+        return name;
     }
 
-    public String getInstrumentName() {
-        return instrumentName;
-    }
-
-    public void setInstrumentName(String instrumentName) {
-        this.instrumentName = instrumentName;
-    }
-
-    public double getInstrumentPrice() {
-        return instrumentPrice;
-    }
-
-    public void setInstrumentPrice(double instrumentPrice) {
-        this.instrumentPrice = instrumentPrice;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Category getCategoryId() {
@@ -75,7 +61,7 @@ public class Instrument implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (instrumentId != null ? instrumentId.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -86,7 +72,7 @@ public class Instrument implements Serializable {
             return false;
         }
         Instrument other = (Instrument) object;
-        if ((this.instrumentId == null && other.instrumentId != null) || (this.instrumentId != null && !this.instrumentId.equals(other.instrumentId))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -94,7 +80,7 @@ public class Instrument implements Serializable {
 
     @Override
     public String toString() {
-        return instrumentName;
+        return name;
     }
 
 }

@@ -18,7 +18,7 @@ public interface InstrumentDao {
     
     public Instrument addInstrument(Instrument instrument);
     
-    public Instrument getInstrumentById(Integer instrumentId);
+    public Instrument getInstrumentById(Integer id);
     
     public boolean deleteInstrument(Instrument instrument);
     

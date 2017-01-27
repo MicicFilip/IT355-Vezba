@@ -62,8 +62,8 @@ public class InstrumentDaoImpl implements InstrumentDao {
     @SuppressWarnings("unchecked")
     @Transactional
     @Override
-    public Instrument getInstrumentById(Integer instrumentId) {
-        return (Instrument) getSession().createCriteria(Instrument.class).add(Restrictions.eq("instrumentId", instrumentId)).uniqueResult();
+    public Instrument getInstrumentById(Integer id) {
+        return (Instrument) getSession().createCriteria(Instrument.class).add(Restrictions.eq("id", id)).uniqueResult();
     }
 
     @SuppressWarnings("unchecked")
@@ -83,7 +83,7 @@ public class InstrumentDaoImpl implements InstrumentDao {
     @Override
     public List<Instrument> instrumentsByCategoryId(Integer id) {
         try {
-            Category cat = (Category) getSession().createCriteria(Category.class).add(Restrictions.eq("categoryId", id)).uniqueResult();
+            Category cat = (Category) getSession().createCriteria(Category.class).add(Restrictions.eq("id", id)).uniqueResult();
             List inst = getSession().createCriteria(Instrument.class).add(Restrictions.eq("categoryId", cat)).list();
             return inst;
         } catch (Exception ex) {
