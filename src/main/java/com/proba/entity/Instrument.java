@@ -27,6 +27,9 @@ public class Instrument implements Serializable {
     @Column(name = "name", length = 50)
     private String name;
 
+    @Column(name = "price")
+    private double price;
+
     @JoinColumn(name = "categoryId", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Category categoryId;
@@ -48,6 +51,14 @@ public class Instrument implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public Category getCategoryId() {

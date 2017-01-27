@@ -22,6 +22,12 @@
                 </form:label>
                 <form:input type="name" class="form-control" id="name" placeholder="Name" path="name" />
             </div>
+            <div class="form-group">
+                <form:label path="price">
+                    Price
+                </form:label>
+                <form:input type="price" class="form-control" id="price" placeholder="Price" path="price" />
+            </div>
               <div class="form-group">
                 <form:label for="categoryId" path="categoryId">Category</form:label>
 
@@ -42,6 +48,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Category</th>
+                            <th>Price</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -52,6 +59,7 @@
                             <tr>
                                 <td>${inst.name}</td>
                                 <td>${inst.categoryId}</td>
+                                <td>${inst.price}$</td>
                                 <td><a href="<c:url value='/editInstrument/${inst.id}' />">edit</a></td>
                                 <td><a href="<c:url value='/deleteInstrument/${inst.id}' />">delete</a></td>
                             </tr>
