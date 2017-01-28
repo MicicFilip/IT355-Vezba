@@ -18,6 +18,8 @@ public interface StoreDao {
     
     public Store addStore(Store store);
     
+    public void editStore(Store store);
+    
     public Store getStoreById(Integer id);
     
     public boolean deleteStore(Store store);

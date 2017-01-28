@@ -18,6 +18,8 @@ public interface InventoryDao {
     
     public Inventory addInventory(Inventory inventory);
     
+    public void editInventory(Inventory inventory);
+    
     public Inventory getInventoryById(Integer id);
     
     public boolean deleteInventory(Inventory inventory);

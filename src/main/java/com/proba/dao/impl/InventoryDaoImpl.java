@@ -58,6 +58,13 @@ public class InventoryDaoImpl implements InventoryDao {
     public Inventory addInventory(Inventory inventory) {
         return (Inventory) getSession().merge(inventory);
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    @Override
+    public void editInventory(Inventory inventory) {
+        getSession().saveOrUpdate(inventory);
+    }
 
     @SuppressWarnings("unchecked")
     @Transactional

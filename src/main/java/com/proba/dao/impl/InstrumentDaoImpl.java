@@ -62,6 +62,13 @@ public class InstrumentDaoImpl implements InstrumentDao {
     @SuppressWarnings("unchecked")
     @Transactional
     @Override
+    public void editInstrument(Instrument instrument) {
+        getSession().saveOrUpdate(instrument);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Transactional
+    @Override
     public Instrument getInstrumentById(Integer id) {
         return (Instrument) getSession().createCriteria(Instrument.class).add(Restrictions.eq("id", id)).uniqueResult();
     }

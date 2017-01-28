@@ -57,6 +57,13 @@ public class CategoryDaoImpl implements CategoryDao {
     public Category addCategory(Category category) {
         return (Category) getSession().merge(category);
     }
+    
+    @SuppressWarnings("unchecked")
+    @Transactional
+    @Override
+    public void editCategory(Category category) {
+        getSession().saveOrUpdate(category);
+    }
 
     @SuppressWarnings("unchecked")
     @Transactional

@@ -18,6 +18,8 @@ public interface InstrumentDao {
     
     public Instrument addInstrument(Instrument instrument);
     
+    public void editInstrument(Instrument instrument);
+    
     public Instrument getInstrumentById(Integer id);
     
     public boolean deleteInstrument(Instrument instrument);

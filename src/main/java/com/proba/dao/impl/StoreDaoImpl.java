@@ -45,7 +45,7 @@ public class StoreDaoImpl implements StoreDao {
         return sessionFactory.getCurrentSession();
     }
 
-   @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     @Transactional
     @Override
     public List<Store> getListStore() {
@@ -57,6 +57,13 @@ public class StoreDaoImpl implements StoreDao {
     @Override
     public Store addStore(Store store) {
         return (Store) getSession().merge(store);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Transactional
+    @Override
+    public void editStore(Store store) {
+        getSession().saveOrUpdate(store);
     }
 
     @SuppressWarnings("unchecked")

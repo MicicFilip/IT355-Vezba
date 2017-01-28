@@ -18,6 +18,8 @@ public interface CategoryDao {
     
     public Category addCategory(Category category);
     
+    public void editCategory(Category category);
+    
     public Category getCategoryById(Integer id);
     
     public boolean deleteCategory(Category category);
