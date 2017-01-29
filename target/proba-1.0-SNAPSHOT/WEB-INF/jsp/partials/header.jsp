@@ -57,7 +57,7 @@
                             <li class="<%=  (pageName.equals("addCategory.jsp")) ? "active" : ""%>"><a href="${addCategory}">Add Category</a></li>
                             <li class="<%=  (pageName.equals("addInstrument.jsp")) ? "active" : ""%>"><a href="${addInstrument}">Add Instrument</a></li>
                             <li class="<%=  (pageName.equals("addStore.jsp")) ? "active" : ""%>"><a href="${addStore}">Add Store</a></li>
-                            <li class="<%=  (pageName.equals("addInstrument.jsp")) ? "active" : ""%>"><a href="${addInventory}">Add Inventory</a></li>
+                            <li class="<%=  (pageName.equals("addInventory.jsp")) ? "active" : ""%>"><a href="${addInventory}">Add Inventory</a></li>
                        
                         </ul>
                     </div>
